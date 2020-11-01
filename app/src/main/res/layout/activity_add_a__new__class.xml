@@ -84,6 +84,7 @@
                 android:layout_height="35dp"
                 android:layout_marginTop="8dip"
                 android:inputType="number"
+                android:maxLength="100"
                 android:textSize="13dp"
                 android:hint="Enter the number of people who attended the class"
                 android:background="@drawable/edit_text_border"

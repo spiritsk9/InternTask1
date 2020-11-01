@@ -13,9 +13,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextWatcher;
 import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +69,7 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         location=findViewById(R.id.location);
         sessions=findViewById(R.id.session);
         nop=findViewById(R.id.nop);
+        nop.addTextChangedListener(new CheckPercentage());
         notes=findViewById(R.id.notes);
         date=findViewById(R.id.date);
         time=findViewById(R.id.time);
@@ -219,6 +223,24 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
                 }
             }
         });
+    }
+
+    class CheckPercentage implements TextWatcher {
+        public void afterTextChanged(Editable s) {
+            try {
+                Log.d("Percentage", "input: " + s);
+                if(Integer.parseInt(s.toString()) > 100)
+                    s.replace(0, s.length(), "100");
+            }
+            catch(NumberFormatException nfe){}
+        }
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            // Not used, details on text just before it changed
+            // used to track in detail changes made to text, e.g. implement an undo
+        }
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            // Not used, details on text at the point change made
+        }
     }
 
     private void getTasks() {

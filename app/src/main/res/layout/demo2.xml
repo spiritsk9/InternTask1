@@ -1,24 +1,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="58dp"
-        android:weightSum="1"
-        android:id="@+id/radioGroup">
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
 
 
         <RadioButton
+            android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
-            android:id="@+id/radioButton"
             android:layout_marginLeft="20dp"
             android:checked="false"
+            android:text="Male"
             android:textSize="25dp" />
 
         <RadioButton
@@ -30,38 +30,42 @@
             android:checked="false"
             android:text="Female"
             android:textSize="25dp" />
+
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
             android:layout_margin="20dp"
+            android:checked="false"
             android:text="Female"
             android:textSize="25dp" />
+
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
             android:layout_marginLeft="180dp"
             android:layout_marginTop="-52dp"
+            android:checked="false"
             android:text="Female"
             android:textSize="25dp" />
+
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
             android:layout_margin="20dp"
+            android:checked="false"
             android:text="Female"
             android:textSize="25dp" />
+
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
             android:layout_marginLeft="180dp"
             android:layout_marginTop="-48dp"
+            android:checked="false"
             android:text="Female"
             android:textSize="25dp" />
     </RadioGroup>
