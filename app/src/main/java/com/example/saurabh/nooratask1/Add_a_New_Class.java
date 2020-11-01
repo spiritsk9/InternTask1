@@ -86,18 +86,6 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         db.execSQL("create table if not exists MyTable3(ID integer primary key autoincrement not null,NAME varchar,PHONE varchar,GENDER varchar)");
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override            public void onClick(View view) {
-                ContentValues cv=new ContentValues();
-                cv.put("CLASS",classs.toString().trim());
-                Long i=db.insert("MyTable3",null,cv);
-                if(i>0){
-                    Toast.makeText(Add_a_New_Class.this,"Data inserted",Toast.LENGTH_LONG).show();
-                    rdGroup.clearCheck();
-                }
-            }
-        });
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,7 +181,7 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         });
         getTasks();
 
-        submit.setOnClickListener(new View.OnClickListener() {
+/*        submit.setOnClickListener(new View.OnClickListener() {
             @Override            public void onClick(View view) {
                 ContentValues cv=new ContentValues();
                 cv.put("CLASS",PNC.toString().trim());
@@ -204,7 +192,7 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
 
                 }
             }
-        });
+        });*/
 
         rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override            public void onCheckedChanged(RadioGroup radioGroup, int i) {

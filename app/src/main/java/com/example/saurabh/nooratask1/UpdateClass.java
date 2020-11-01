@@ -245,7 +245,7 @@ public class UpdateClass extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    private void deleteTask(final ClassData task) {
+/*    private void deleteTask(final ClassData task) {
         class DeleteTask extends AsyncTask<Void, Void, Void> {
 
             @Override
@@ -256,18 +256,18 @@ public class UpdateClass extends AppCompatActivity implements View.OnClickListen
                 return null;
             }
 
-            @Override
+     *//*       @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_LONG).show();
                 finish();
                 startActivity(new Intent(UpdateClass.this, Appoint.class));
-            }
+            }*//*
         }
 
         DeleteTask dt = new DeleteTask();
         dt.execute();
 
-    }
+    }*/
 
 }
