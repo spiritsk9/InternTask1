@@ -16,10 +16,11 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatTextView
+        <android.support.v7.widget.AppCompatImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            app:srcCompat="@drawable/camera"
+            android:id="@+id/camerapick"
+            android:background="@drawable/camerayello"
            />
 
         <android.support.v7.widget.AppCompatTextView
@@ -44,7 +45,8 @@
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/gallery"
+            android:id="@+id/gallerypick"
+            android:background="@drawable/ic_baseline_add_photo_alternate_24"
              />
 
         <android.support.v7.widget.AppCompatTextView

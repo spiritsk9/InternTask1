@@ -30,15 +30,13 @@
 
             <Button
                 android:id="@+id/upload"
-                android:layout_width="fill_parent"
-                android:layout_height="49dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/dashed_border"
-                android:drawableStart="@drawable/ic_baseline_add_photo_alternate_24"
+                android:gravity="center"
                 android:text="Upload Image of the class"
-                android:textAlignment="center"
-                android:textColor="#7A7674"
-                tools:ignore="RtlCompat" />
+                android:textColor="#7A7674" />
 
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -99,91 +97,109 @@
                 android:text="Class Type"/>
 
 
-            <RadioGroup
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-              >
-
-                <RadioButton
-                    android:id="@+id/anc"
-                    android:layout_width="wrap_content"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="ANC"
-                    android:textColor="#7A7674" />
+                    android:id="@+id/radioGroup">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/sncu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="75dp"
-                    android:text="SNCU"
-                    android:textColor="#7A7674" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ANC"
+                            android:id="@+id/anc"
+                            android:textColor="#7A7674"
+                            android:layout_marginLeft="20dp"
+
+                            />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#7A7674"
+                            android:id="@+id/sncu"
+                            android:text="SNCU"
+                            android:layout_marginLeft="90dp"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PNC"
+                            android:id="@+id/pnc"
+                            android:textColor="#7A7674"
+                            android:layout_marginLeft="20dp"
+
+                            />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inpatient"
+                            android:id="@+id/inpatient"
+                            android:textColor="#7A7674"
+                            android:layout_marginLeft="90dp"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cs"
+                            android:text="Cardiac Surgery"
+                            android:textColor="#7A7674"
+                            android:layout_marginLeft="20dp"
+
+                            />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cardiology"
+                            android:layout_marginLeft="19dp"
+
+                            android:textColor="#7A7674"
+                            android:text="Cardiology" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Oncology"
+                            android:id="@+id/onology"
+                            android:textColor="#7A7674"
+                            android:layout_marginLeft="20dp"
+
+                            />
+                    </LinearLayout>
+                </RadioGroup>
+
+            </LinearLayout>
 
 
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/pnc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#7A7674"
-                    android:text="PNC"
-                   />
-
-                <RadioButton
-                    android:id="@+id/inp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="75dp"
-                    android:textColor="#7A7674"
-                    android:text="Inpatient"
-                    />
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/cs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#7A7674"
-                    android:text="Cardiac Surgery"
-                    />
-
-                <RadioButton
-                    android:id="@+id/rb_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:textColor="#7A7674"
-                    android:text="Cardiology"
-                    />
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/oncology"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#7A7674"
-                    android:text="Oncology"
-                    />
 
 
-            </RadioGroup>
 
             <TextView
                 android:layout_width="fill_parent"
@@ -239,10 +255,7 @@
                 android:background="@drawable/edit_text_border"
                 android:singleLine="true" />
 
-            <!-- Register Button -->
 
-
-            <!-- Register Button -->
 
             <Button android:id="@+id/submit"
                 android:layout_width="fill_parent"
@@ -253,9 +266,8 @@
                 android:text="SUBMIT DETAILS"/>
 
 
-            <!-- Link to Login Screen -->
 
         </LinearLayout>
-        <!-- Registration Form Ends -->
+
     </RelativeLayout>
 </ScrollView>

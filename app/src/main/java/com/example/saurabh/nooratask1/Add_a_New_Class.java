@@ -2,23 +2,35 @@ package com.example.saurabh.nooratask1;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.RadioButton;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -30,6 +42,18 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
     TextView date,time;
     EditText nop,location,sessions,notes;
     private RecyclerView recyclerView;
+
+    RadioButton ANC;
+    RadioButton SNCU;
+    RadioButton PNC;
+    RadioButton INPATIENT;
+    RadioButton CS;
+    RadioButton CARDIOLOGY;
+    RadioButton ONCOLOGY;
+    RadioGroup rdGroup;
+    SQLiteDatabase db;
+    String classs="";
+    Button submit;
 
    private int mYear, mMonth, mDay, mHour, mMinute;
     @Override
@@ -45,6 +69,34 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         notes=findViewById(R.id.notes);
         date=findViewById(R.id.date);
         time=findViewById(R.id.time);
+        submit=findViewById(R.id.submit);
+
+
+        rdGroup=(RadioGroup) findViewById(R.id.radioGroup);
+        ANC=(RadioButton) findViewById(R.id.anc);
+        SNCU=(RadioButton) findViewById(R.id.sncu);
+        PNC=(RadioButton) findViewById(R.id.pnc);
+     INPATIENT=(RadioButton) findViewById(R.id.inpatient);
+        CS=(RadioButton) findViewById(R.id.cs);
+        CARDIOLOGY=(RadioButton) findViewById(R.id.cardiology);
+        ONCOLOGY=(RadioButton) findViewById(R.id.oncology);
+
+        //database
+        db=openOrCreateDatabase("MyData3", Context.MODE_PRIVATE,null);
+        db.execSQL("create table if not exists MyTable3(ID integer primary key autoincrement not null,NAME varchar,PHONE varchar,GENDER varchar)");
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override            public void onClick(View view) {
+                ContentValues cv=new ContentValues();
+                cv.put("CLASS",classs.toString().trim());
+                Long i=db.insert("MyTable3",null,cv);
+                if(i>0){
+                    Toast.makeText(Add_a_New_Class.this,"Data inserted",Toast.LENGTH_LONG).show();
+                    rdGroup.clearCheck();
+                }
+            }
+        });
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +112,73 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         time.setOnClickListener(this);
 
         upload.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                showAlertDialog(R.layout.dialoguebox);
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Add_a_New_Class.this);
+
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.dummydialog,null);
+
+                builder.setView(dialogView);
+
+                ImageView one = (ImageView) dialogView.findViewById(R.id.gallerypick);
+                ImageView two = (ImageView) dialogView.findViewById(R.id.camerapick);
+
+                final AlertDialog dialog = builder.create();
+
+                two.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(takePicture, 0);//zero can be replaced with any action code (called requestCode)
+
+                    }
+                });
+
+                one.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent pickPhoto = new Intent(Intent.ACTION_PICK,
+                                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        startActivityForResult(pickPhoto , 1);//one can be replaced with any action code
+
+                    }
+                });
+
+
+                // Display the custom alert dialog on interface
+                dialog.show();
+
+
+            }
+            protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+                Add_a_New_Class.super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+                switch(requestCode) {
+                    case 0:
+                        ImageSwitcher imageview;
+                        if(resultCode == RESULT_OK){
+                            Uri selectedImage = imageReturnedIntent.getData();
+                        }
+
+                        break;
+                    case 1:
+                        if(resultCode == RESULT_OK){
+                            Uri selectedImage = imageReturnedIntent.getData();
+                        }
+                        break;
+                }
             }
         });
 
-
+        Button button = (Button) findViewById(R.id.upload);
+        Spannable buttonLabel = new SpannableString(" UPLOAD IMAGE OF THE CLASS");
+        buttonLabel.setSpan(new ImageSpan(getApplicationContext(), R.drawable.ic_baseline_add_photo_alternate_24,
+                ImageSpan.ALIGN_BOTTOM), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        button.setText(buttonLabel);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -74,10 +186,51 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 saveTask();
             }
         });
         getTasks();
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override            public void onClick(View view) {
+                ContentValues cv=new ContentValues();
+                cv.put("CLASS",PNC.toString().trim());
+                Long i=db.insert("MyTable3",null,cv);
+                if(i>0){
+                    Toast.makeText(Add_a_New_Class.this,"Data inserted",Toast.LENGTH_LONG).show();
+                    rdGroup.clearCheck();
+
+                }
+            }
+        });
+
+        rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i==R.id.anc){
+                    classs="ANC";
+                }
+                else if(i==R.id.sncu){
+                    classs="SNCU";
+                }
+                else if(i==R.id.sncu){
+                    classs="PNC";
+                }
+                else if(i==R.id.pnc){
+                    classs="Inpatient";
+                }
+                else if(i==R.id.inpatient){
+                    classs="CS";
+                }
+                else if(i==R.id.cardiology){
+                    classs="Cardiology";
+                }
+                else if(i==R.id.oncology){
+                    classs="Cardiology";
+                }
+            }
+        });
     }
 
     private void getTasks() {
@@ -210,7 +363,6 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-
         class SaveTask extends AsyncTask<Void, Void, Void> {
 
             @Override
@@ -243,6 +395,7 @@ public class Add_a_New_Class extends AppCompatActivity implements View.OnClickLi
 
         SaveTask st = new SaveTask();
         st.execute();
+
     }
 
 }

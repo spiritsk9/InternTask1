@@ -14,6 +14,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TasksViewHolder> {
     private Context mCtx;
     private List<ClassData> classDataList;
 
+
     public Adapter(Context mCtx, List<ClassData> taskList) {
         this.mCtx = mCtx;
         this.classDataList = taskList;
@@ -31,6 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TasksViewHolder> {
         ClassData t = classDataList.get(position);
         holder.date.setText(t.getDate());
         holder.time.setText(t.getTime());
+      //  holder.classs.setText(g.get);
 
      //   holder.count.setText(Integer.parseInt(count.getText().toString())+1);
 
@@ -46,7 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TasksViewHolder> {
 
     class TasksViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView date, time,count;
+        TextView date, time,count,classs;
 
         public TasksViewHolder(View itemView) {
             super(itemView);
@@ -54,6 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TasksViewHolder> {
             date = itemView.findViewById(R.id.date);
             time = itemView.findViewById(R.id.time);
             count=itemView.findViewById(R.id.getcount);
+            classs=itemView.findViewById(R.id.classes);
 
             itemView.setOnClickListener(this);
         }

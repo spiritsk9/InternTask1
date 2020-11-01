@@ -1,174 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="#FFAB00">
+    tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello!"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:textColor="#FFF"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="You can View Or Edit your previous entries by clicking on them."
-            android:textColor="#FFF"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginLeft="20dp"
-            android:textSize="20sp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#FFF" />
-
-        <View
-            android:layout_width="3dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#FFF" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sessions Conducted"
-            android:textColor="#FFF"
-            android:textSize="18dp"
-            android:fontFamily="sans-serif"
-            android:layout_marginTop="-25dp"
-            android:layout_marginLeft="15dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Patients Impacted"
-            android:textColor="#FFF"
-            android:textSize="18dp"
-            android:fontFamily="sans-serif"
-            android:layout_marginTop="-25dp"
-            android:layout_marginLeft="200dp"/>
-    </LinearLayout>
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
+        android:layout_marginTop="58dp"
+        android:weightSum="1"
+        android:id="@+id/radioGroup">
+
+
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="20dp"/>
-            <View
-                android:layout_width="2dp"
-                android:layout_height="20dp"
-                android:background="#FF6D00"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Day"
-                android:layout_marginLeft="20dp"
-                android:textColor="#000"
-                android:textSize="20dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                android:layout_marginLeft="100dp"
-                android:textColor="#FFAB00"
-                android:textSize="20dp"/>
-        </LinearLayout>
+            android:text="Male"
+            android:id="@+id/radioButton"
+            android:layout_marginLeft="20dp"
+            android:checked="false"
+            android:textSize="25dp" />
 
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginTop="-10dp"
-            android:layout_marginLeft="-80dp"
-            android:src="@drawable/line"
-            app:tint="#FFAB00" />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="-50dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="20dp"
-            android:background="#FFAB00" />
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:textColor="#000"
-                android:textSize="20dp"/>
-            <View
-                android:layout_width="2dp"
-                android:layout_height="20dp"
-                android:background="#FF6D00"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Day"
-                android:layout_marginLeft="20dp"
-                android:textColor="#000"
-                android:textSize="20dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                android:layout_marginLeft="100dp"
-                android:textColor="#FFAB00"
-                android:textSize="20dp"/>
-        </LinearLayout>
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="-38dp"
+            android:checked="false"
+            android:text="Female"
+            android:textSize="25dp" />
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_margin="20dp"
+            android:text="Female"
+            android:textSize="25dp" />
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="-52dp"
+            android:text="Female"
+            android:textSize="25dp" />
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_margin="20dp"
+            android:text="Female"
+            android:textSize="25dp" />
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="-48dp"
+            android:text="Female"
+            android:textSize="25dp" />
+    </RadioGroup>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="20dp"
-            android:background="#FFAB00" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="200dp"
-            android:background="#FFAB00"
-            android:text="Mark New Attendance"
-            android:textColor="#FFF"
-            android:textSize="20sp" />
-    </LinearLayout>
 
 </LinearLayout>
