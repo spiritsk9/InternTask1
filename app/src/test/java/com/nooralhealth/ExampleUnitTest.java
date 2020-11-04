@@ -1,4 +1,4 @@
-package com.example.saurabh.interntask;
+package com.nooralhealth;
 
 import org.junit.Test;
 

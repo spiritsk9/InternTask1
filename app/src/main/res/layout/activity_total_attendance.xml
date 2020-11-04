@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.base.TotalAttendance">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/section1"
@@ -38,9 +38,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello!"
-                android:textColor="#ffff"
+                style="@style/Bold"
                 android:textSize="30dp"
-                android:fontFamily="@font/assistantbold"
+                android:textColor="#ffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,8 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="You can View Or Edit your previous class entries by clicking on them."
-                android:textColor="#FFF"
-                android:fontFamily="@font/assistantregular"
+                style="@style/Regular"
+                android:textColor="#ffff"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,8 +91,8 @@
                         android:layout_height="wrap_content"
                         android:text="02"
                         android:textColor="#ffff"
+                        style="@style/Bold"
                         android:textSize="32sp"
-                        android:fontFamily="@font/assistantbold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -103,13 +103,15 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="8dp"
                         android:text="Sessions Conducted"
-                        android:fontFamily="@font/assistantbold"
-                        android:textColor="#ffff"
                         android:textSize="18sp"
+                        style="@style/Bold"
+                        android:textColor="#ffff"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/sessionValue"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -138,9 +140,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="02"
-                        android:textColor="#ffff"
-                        android:fontFamily="@font/assistantbold"
                         android:textSize="32sp"
+                        style="@style/Bold"
+                        android:textColor="#ffff"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -150,10 +152,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Patients Impacted"
-                        android:fontFamily="@font/assistantbold"
-                        android:textColor="#ffff"
+                        style="@style/Bold"
                         android:textSize="18sp"
                         android:paddingStart="8dp"
+                        android:textColor="#ffff"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/patientValue"
@@ -198,9 +200,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="MARK NEW ATTENDANCE"
-             android:textColor="#fff"
-            android:fontFamily="@font/assistantsemibold"
+            style="@style/SemiBold"
             android:background="#F6CB12"
+            android:textColor="#ffff"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

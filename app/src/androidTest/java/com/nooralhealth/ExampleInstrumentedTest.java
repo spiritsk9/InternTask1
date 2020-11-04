@@ -1,4 +1,4 @@
-package com.example.saurabh.interntask;
+package com.nooralhealth;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.saurabh.interntask", appContext.getPackageName());
+        assertEquals("com.nooralhealth", appContext.getPackageName());
     }
 }

@@ -5,6 +5,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="Regular">
+        <item name="android:fontFamily">@font/assistantregular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SemiBold">
+        <item name="android:fontFamily">@font/assistantsemibold</item>
+    </style>
+
+    <style name="Bold">
+        <item name="android:fontFamily">@font/assistantbold</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

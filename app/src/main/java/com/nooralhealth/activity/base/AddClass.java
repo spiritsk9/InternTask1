@@ -1,8 +1,10 @@
-package com.example.saurabh.interntask;
+package com.nooralhealth.activity.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.nooralhealth.R;
 
 public class AddClass extends AppCompatActivity {
 

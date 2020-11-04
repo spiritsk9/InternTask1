@@ -1,4 +1,4 @@
-package com.example.saurabh.interntask;
+package com.nooralhealth.activity.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,14 +12,16 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.nooralhealth.R;
+
+public class TotalAttendance extends AppCompatActivity {
 
     TextView headerMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_total_attendance);
 
         headerMessage = findViewById(R.id.headerMessage);
 

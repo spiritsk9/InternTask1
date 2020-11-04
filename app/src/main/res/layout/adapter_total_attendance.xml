@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="02"
-            android:fontFamily="@font/assistantbold"
+        style="@style/Bold"
             android:textColor="#040303"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
             android:text="August"
-            android:fontFamily="@font/assistantregular"
+          style="@style/SemiBold"
             android:textColor="#131313"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
             android:paddingStart="8dp"
             android:text="THURSDAY"
             android:textColor="#131313"
-            android:fontFamily="@font/assistantregular"
+            style="@style/Regular"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:text="05:10 PM"
             android:textColor="#F6CB12"
-            android:fontFamily="@font/assistantbold"
+            style="@style/Bold"
             android:drawableEnd="@drawable/arrowyellow"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -101,7 +101,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="PNC"
-            android:fontFamily="@font/assistantbold"
+             style="@style/Bold"
             android:textColor="#F6CB12"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -116,7 +116,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/classs"
-         />
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
