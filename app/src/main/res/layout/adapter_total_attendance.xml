@@ -69,11 +69,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="05:10 PM"
-            android:textColor="#F6CB12"
             style="@style/YellBold"
             android:drawableEnd="@drawable/arrowyellow"
-            android:textSize="15sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -96,8 +93,6 @@
             android:layout_height="wrap_content"
             android:text="PNC"
              style="@style/YellBold"
-            android:textColor="#F6CB12"
-            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
