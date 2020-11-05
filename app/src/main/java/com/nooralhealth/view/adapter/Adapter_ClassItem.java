@@ -2,7 +2,6 @@ package com.nooralhealth.view.adapter;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +10,16 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nooralhealth.R;
-import com.nooralhealth.activity.ClassData;
+import com.nooralhealth.model.room.model.ClassTypeItem;
 
 import java.util.List;
 
 public class Adapter_ClassItem extends RecyclerView.Adapter<Adapter_ClassItem.TasksViewHolder> {
     private Context mCtx;
-    private List<ClassData> classDataList;
+    private List<ClassTypeItem> classDataList;
 
 
-    public Adapter_ClassItem(Context mCtx, List<ClassData> taskList) {
+    public Adapter_ClassItem(Context mCtx, List<ClassTypeItem> taskList) {
         this.mCtx = mCtx;
         this.classDataList = taskList;
     }
@@ -34,8 +33,8 @@ public class Adapter_ClassItem extends RecyclerView.Adapter<Adapter_ClassItem.Ta
 
     @Override
     public void onBindViewHolder(TasksViewHolder holder, int position) {
-        ClassData t = classDataList.get(position);
-        holder.classes.setText(t.getClasses());
+        ClassTypeItem t = classDataList.get(position);
+        holder.classes.setText(t.getName());
 
         //  holder.classs.setText(g.get);
 
@@ -67,7 +66,7 @@ public class Adapter_ClassItem extends RecyclerView.Adapter<Adapter_ClassItem.Ta
 
         @Override
         public void onClick(View view) {
-            ClassData task = classDataList.get(getAdapterPosition());
+            ClassTypeItem task = classDataList.get(getAdapterPosition());
 /*
             Intent intent = new Intent(mCtx, UpdateClass.class);
             intent.putExtra("task", task);
