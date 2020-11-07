@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NooralHealth</string>
+
+
+    <string name="class_list_title_message">You can view or edit your previous class entries by clicking on them.</string>
+    <string name="class_list_title_message_bold">view or edit</string>
 </resources>

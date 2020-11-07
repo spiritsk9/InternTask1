@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.base.TotalAttendance"></activity>
-        <activity android:name=".activity.splash.SplashScreen">
+        <activity android:name=".activity.Add_Attendance"></activity>
+        <activity android:name=".activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.AttendanceActivity" />
     </application>
 
 </manifest>

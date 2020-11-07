@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f3fa4796fe4e88fa5bcd85b364d3a9ff",
+    "identityHash": "52b5e964ae4c015c9c3ecdd026c6fae1",
     "entities": [
       {
-        "tableName": "ClassData",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `classes` TEXT)",
+        "tableName": "ClassTypeItem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -15,8 +15,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "classes",
-            "columnName": "classes",
+            "fieldPath": "name",
+            "columnName": "name",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -31,9 +31,10 @@
         "foreignKeys": []
       }
     ],
+    "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f3fa4796fe4e88fa5bcd85b364d3a9ff\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '52b5e964ae4c015c9c3ecdd026c6fae1')"
     ]
   }
 }

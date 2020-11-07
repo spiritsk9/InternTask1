@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/toolbaar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="#F6CB12"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upload"
+            style="@style/UploadImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="  Upload Image of the Class"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+        <TextView
+            android:id="@+id/dated"
+            android:text="Date"
+            style="@style/TextViews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload"/>
+
+        <TextView
+            android:id="@+id/inputdate"
+            style="@style/InputTextViews"
+            android:hint="05 August 2020"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dated" />
+
+        <TextView
+            android:id="@+id/time"
+            android:text="Time"
+            style="@style/TextViews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputdate"/>
+
+        <TextView
+            android:id="@+id/inputtime"
+            style="@style/InputTextViews"
+            android:hint="03:06 PM"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/nop"
+            android:text="Number of People"
+            style="@style/TextViews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputtime"/>
+
+        <TextView
+            android:id="@+id/inputnop"
+            style="@style/InputTextViews"
+            android:hint="Enter the number of people attached to the class"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nop" />
+
+        <TextView
+            android:id="@+id/classtype"
+            style="@style/TextViews"
+            android:text="Class Type (Select any one)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputnop" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiogrp"
+            android:padding="8dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/classtype">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:checked="false"
+                    style="@style/RadioBtn"
+                    android:text="ANC" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="SNCU" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="PNC" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="Inpatient" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="Cardiac Surgery" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="Cardiology" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    style="@style/RadioBtn"
+                    android:checked="false"
+                    android:text="Oncology" />
+
+            </GridLayout>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/locward"
+            style="@style/TextViews"
+            android:text="Location Ward"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radiogrp" />
+
+        <TextView
+            android:id="@+id/inputlocWard"
+            style="@style/InputTextViews"
+            android:hint="Enter ward details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locward" />
+
+        <TextView
+            android:id="@+id/session"
+            style="@style/TextViews"
+            android:text="Session Conducted with section"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputlocWard" />
+
+        <TextView
+            android:id="@+id/inputsession"
+            style="@style/InputTextViews"
+            android:hint="Enter session details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session" />
+
+        <TextView
+            android:id="@+id/notes"
+            style="@style/TextViews"
+            android:text="Notes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputsession" />
+
+        <TextView
+            android:id="@+id/inputnotes"
+            style="@style/InputNotes"
+            android:hint="Notes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notes" />
+
+        <Button
+            android:id="@+id/btnmark"
+            style="@style/BtnMarkAttendance"
+            android:text="SUBMIT DETAILS"
+            android:background="#F6CB12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputnotes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
