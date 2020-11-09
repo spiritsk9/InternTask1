@@ -14,7 +14,7 @@ import java.util.List;
 import static androidx.room.OnConflictStrategy.REPLACE;
 
 @Dao
-public interface ClassTypeDao {
+public interface  ClassTypeDao {
 
     @Query("SELECT * FROM ClassTypeItem")
     LiveData<List<ClassTypeItem>> getClassTypeItems();

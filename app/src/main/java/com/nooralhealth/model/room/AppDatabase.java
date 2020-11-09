@@ -7,9 +7,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.nooralhealth.model.room.dao.ClassTypeDao;
+import com.nooralhealth.model.room.dao.NDao;
+import com.nooralhealth.model.room.model.ClassData;
 import com.nooralhealth.model.room.model.ClassTypeItem;
 
-@Database(entities = {ClassTypeItem.class}, version = 1)
+
+@Database(entities = {ClassTypeItem.class, ClassData.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String DB_NAME = "noora_db";
     private static AppDatabase INSTANCE;
@@ -28,4 +31,7 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
     public abstract ClassTypeDao getClassTypeDao();
+
+    public abstract NDao nDao();
+
 }

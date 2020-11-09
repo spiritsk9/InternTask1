@@ -34,7 +34,7 @@ public class Adapter_ClassItem extends RecyclerView.Adapter<Adapter_ClassItem.Ta
     @Override
     public void onBindViewHolder(TasksViewHolder holder, int position) {
         ClassTypeItem t = classDataList.get(position);
-        holder.classes.setText(t.getName());
+     //   holder.inputdate.setText(t.getDate());
 
         //  holder.classs.setText(g.get);
 
@@ -52,13 +52,14 @@ public class Adapter_ClassItem extends RecyclerView.Adapter<Adapter_ClassItem.Ta
 
     class TasksViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView classes;
-        ;
+        TextView inputdate, inputtime;
+
 
         public TasksViewHolder(View itemView) {
             super(itemView);
 
-            classes = itemView.findViewById(R.id.classs);
+            inputdate = itemView.findViewById(R.id.date);
+            inputtime = itemView.findViewById(R.id.time);
 
 
             itemView.setOnClickListener(this);

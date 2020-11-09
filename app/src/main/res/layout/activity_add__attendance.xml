@@ -14,14 +14,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <View
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:background="#F6CB12"
             android:layout_height="?actionBarSize"
+            android:background="#F6CB12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:id="@+id/upload"
@@ -60,7 +63,6 @@
             android:id="@+id/inputtime"
             style="@style/InputTextViews"
             android:hint="03:06 PM"
-            android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time" />
@@ -73,10 +75,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputtime"/>
 
-        <TextView
+        <EditText
             android:id="@+id/inputnop"
             style="@style/InputTextViews"
-            android:hint="Enter the number of people attached to the class"
+            android:hint="@string/nop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nop" />
@@ -154,10 +156,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radiogrp" />
 
-        <TextView
+        <EditText
             android:id="@+id/inputlocWard"
             style="@style/InputTextViews"
-            android:hint="Enter ward details"
+            android:hint="@string/loc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/locward" />
@@ -171,10 +173,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputlocWard" />
 
-        <TextView
+        <EditText
             android:id="@+id/inputsession"
             style="@style/InputTextViews"
-            android:hint="Enter session details"
+            android:hint="@string/session"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/session" />
@@ -188,10 +190,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputsession" />
 
-        <TextView
+        <EditText
             android:id="@+id/inputnotes"
             style="@style/InputNotes"
-            android:hint="Notes"
+            android:hint="@string/notes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/notes" />
