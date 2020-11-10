@@ -12,7 +12,7 @@ import com.nooralhealth.activity.base.BaseActivity;
 public class AttendanceActivity extends BaseActivity {
 
     TextView headerMessage;
-    Button markAttendance;
+    Button markAttendance, openlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,20 @@ public class AttendanceActivity extends BaseActivity {
                 startActivity(i);
             }
         });
+
+        openlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AttendanceActivity.this,ListDemo.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void initView() {
         headerMessage = findViewById(R.id.headerMessage);
         markAttendance = findViewById(R.id.btnmark);
+        openlist = findViewById(R.id.openlist);
     }
 
     private void setDetails() {
