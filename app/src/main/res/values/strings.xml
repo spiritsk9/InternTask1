@@ -8,4 +8,11 @@
     <string name="loc"><font size="15">Enter ward details</font></string>
     <string name="session"><font size="15">Enter session details</font></string>
     <string name="notes"><font size="15">Notes</font></string>
+
+    <string name="alert_dialog_title">Select Image Option</string>
+
+    <string-array name="image_options">
+        <item>Choose photo from gallery</item>
+        <item>Take picture with camera</item>
+    </string-array>
 </resources>

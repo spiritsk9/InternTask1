@@ -1,13 +1,19 @@
 package com.nooralhealth.activity;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,8 +44,11 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
     Toolbar toolbar;
     TextView date,time,upload ;
     EditText inputnop,inputloc,inputsession ,inputnotes;
+    ImageView display;
     Button btnMarkAttnd;
     private int mYear, mMonth, mDay, mHour, mMinute;
+
+
 
 
     @Override
@@ -56,6 +65,7 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
         time=findViewById(R.id.inputtime);
         btnMarkAttnd = findViewById(R.id.btnmark);
         upload = findViewById(R.id.upload);
+        display = findViewById(R.id.display);
 
         date.setOnClickListener(this);
         time.setOnClickListener(this);
@@ -64,7 +74,12 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-        initView();
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage(Add_Attendance.this);
+            }
+        });
 
         findViewById(R.id.btnmark).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +88,10 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
             }
         });
         getTasks();
+        initView();
 
 
-
+/*
         upload.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -124,17 +140,19 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
                         ImageSwitcher imageview;
                         if(resultCode == RESULT_OK){
                             Uri selectedImage = imageReturnedIntent.getData();
+                            display.setImageURI(selectedImage);
                         }
-
                         break;
+
                     case 1:
                         if(resultCode == RESULT_OK){
                             Uri selectedImage = imageReturnedIntent.getData();
+                            display.setImageURI(selectedImage);
                         }
                         break;
                 }
             }
-        });
+        });*/
 
     }
 
@@ -196,6 +214,73 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
             timePickerDialog.show();
         }
     }
+
+
+    private void selectImage(Context context) {
+        final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
+
+        android.app.AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Upload your class Image");
+
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+
+                if (options[item].equals("Take Photo")) {
+                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(takePicture, 0);
+
+                } else if (options[item].equals("Choose from Gallery")) {
+                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickPhoto, 1);//one can be replaced with any action code
+
+                } else if (options[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_CANCELED) {
+            switch (requestCode) {
+                case 0:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+                        display.setImageBitmap(selectedImage);
+                    }
+
+                    break;
+                case 1:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Uri selectedImage = data.getData();
+                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                        if (selectedImage != null) {
+                            Cursor cursor = getContentResolver().query(selectedImage,
+                                    filePathColumn, null, null, null);
+                            if (cursor != null) {
+                                cursor.moveToFirst();
+
+                                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                                String picturePath = cursor.getString(columnIndex);
+                                display.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                                cursor.close();
+                            }
+                        }
+
+                    }
+                    break;
+            }
+        }
+    }
+
+
+
 
     class CheckPercentage implements TextWatcher {
         public void afterTextChanged(Editable s) {

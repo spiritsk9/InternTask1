@@ -34,13 +34,24 @@
             android:hint="  Upload Image of the Class"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
+        <ImageView
+            android:id="@+id/display"
+            style="@style/UploadImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:hint="  Upload Image of the Class"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload" />
+
         <TextView
             android:id="@+id/dated"
             android:text="Date"
             style="@style/TextViews"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upload"/>
+            app:layout_constraintTop_toBottomOf="@+id/display"/>
 
         <TextView
             android:id="@+id/inputdate"
