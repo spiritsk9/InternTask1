@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.nooralhealth.R;
 import com.nooralhealth.activity.AttendanceActivity;
+import com.nooralhealth.activity.Open_Diff_Activities;
 import com.nooralhealth.activity.base.BaseActivity;
 import com.nooralhealth.model.room.model.ClassTypeItem;
 import com.nooralhealth.utill.MyLg;
@@ -38,7 +39,7 @@ public class SplashActivity extends BaseActivity {
 
     private void openActivity() {
         if (splashDone && dataCheck) {
-            Intent i = new Intent(SplashActivity.this, AttendanceActivity.class);
+            Intent i = new Intent(SplashActivity.this, Open_Diff_Activities.class);
             startActivity(i);
             finish();
         }

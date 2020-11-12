@@ -7,12 +7,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.nooralhealth.model.room.dao.ClassTypeDao;
+import com.nooralhealth.model.room.dao.MyImageDao;
 import com.nooralhealth.model.room.dao.NDao;
 import com.nooralhealth.model.room.model.ClassData;
 import com.nooralhealth.model.room.model.ClassTypeItem;
+import com.nooralhealth.model.room.model.MyImage;
 
 
-@Database(entities = {ClassTypeItem.class, ClassData.class}, version = 1)
+@Database(entities = {ClassTypeItem.class, ClassData.class, MyImage.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String DB_NAME = "noora_db";
     private static AppDatabase INSTANCE;
@@ -34,4 +36,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract NDao nDao();
 
+    public abstract MyImageDao myImageDao();
+
+   public AppDatabase getAppDatabase() {
+       return INSTANCE;
+
+   }
 }

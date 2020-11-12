@@ -3,8 +3,6 @@ package com.nooralhealth.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -21,19 +19,17 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.nooralhealth.R;
-import com.nooralhealth.model.room.DatabaseClient;
+import com.nooralhealth.model.room.AppDatabase;
 import com.nooralhealth.model.room.model.ClassData;
 
 import java.util.Calendar;
@@ -305,8 +301,8 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
 
             @Override
             protected List<ClassData> doInBackground(Void... voids) {
-                List<ClassData> taskList = DatabaseClient
-                        .getInstance(getApplicationContext())
+                List<ClassData> taskList = AppDatabase
+                        .getDatabase(getApplicationContext())
                         .getAppDatabase()
                         .nDao()
                         .getAll();
@@ -382,7 +378,7 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
                 classData.setNotes(unotes);
 
                 //adding to database
-                DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                AppDatabase.getDatabase(getApplicationContext()).getAppDatabase()
                         .nDao()
                         .insert(classData);
                 return null;
