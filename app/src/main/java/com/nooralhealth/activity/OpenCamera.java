@@ -34,13 +34,14 @@ import androidx.lifecycle.LifecycleOwner;
 
 import com.nooralhealth.BuildConfig;
 import com.nooralhealth.R;
+import com.nooralhealth.activity.base.BaseActivity;
 import com.nooralhealth.model.room.dao.ImgDao;
 import com.nooralhealth.model.room.model.ImagePath;
 
 import java.io.File;
 import java.net.URI;
 
-public class OpenCamera extends AppCompatActivity {
+public class OpenCamera extends BaseActivity {
 
     private int REQUEST_CODE_PERMISSIONS = 101;
     private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE"};
@@ -102,9 +103,11 @@ public class OpenCamera extends AppCompatActivity {
                     @Override
                     public void onImageSaved(@NonNull File file) {
                         String msg = "Pic captured at " + file.getAbsolutePath();
-                        String ImagePath = file.getPath();
+                        String imagePath = file.getPath();
                        // Bitmap myBitmap = BitmapFactory.decodeFile(ImagePath)
-                        Log.e("path",ImagePath);
+                        Log.e("path",imagePath);
+
+                        imgViewModel.addImagePathItem(new ImagePath(imagePath));
 
                         Toast.makeText(getBaseContext(), msg,Toast.LENGTH_LONG).show();
                     }

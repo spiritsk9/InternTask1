@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.nooralhealth.R;
 import com.nooralhealth.model.room.viewmodel.ClassTypeViewModel;
+import com.nooralhealth.model.room.viewmodel.ImgViewModel;
 import com.nooralhealth.utill.CustomTypefaceSpan;
 
 
@@ -23,6 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Context context = BaseActivity.this;
 
     public ClassTypeViewModel classTypeViewModel;
+    public ImgViewModel imgViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         ViewModelProvider viewModelProvider = new ViewModelProvider(this);
 
         classTypeViewModel = viewModelProvider.get(ClassTypeViewModel.class);
+        imgViewModel = viewModelProvider.get(ImgViewModel.class);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.nooralhealth.model.room.dao;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,7 +17,7 @@ import java.util.List;
 public interface ImgDao {
 
     @Query("SELECT * FROM imagepath")
-    List<ImagePath> getAll();
+    LiveData<List<ImagePath>> getAll();
 
     @Insert
     void insert(ImagePath path);

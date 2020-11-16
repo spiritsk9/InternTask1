@@ -36,9 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract NDao nDao();
 
-    public abstract ImgDao imgDao();
-
-
+    public abstract ImgDao getImgDao();
 
    public AppDatabase getAppDatabase() {
        return INSTANCE;
