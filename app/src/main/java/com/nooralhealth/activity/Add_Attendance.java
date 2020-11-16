@@ -325,6 +325,7 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
         final String unotes = inputnotes.getText().toString().trim();
 
 
+
         if (udate.isEmpty()) {
             date.setError("Date required");
             date.requestFocus();
@@ -342,8 +343,6 @@ public class Add_Attendance extends AppCompatActivity implements View.OnClickLis
             inputnop.requestFocus();
             return;
         }
-
-
 
         if (uloc.isEmpty()) {
             inputloc.setError("Field is required");

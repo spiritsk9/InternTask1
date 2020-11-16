@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "ba2b9c328487e8965205f0c33db70d01",
+    "identityHash": "c2984fe8dad3f45c9796d6383630887b",
     "entities": [
       {
         "tableName": "ClassTypeItem",
@@ -87,31 +87,25 @@
         "foreignKeys": []
       },
       {
-        "tableName": "MyImage",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `photo` TEXT, `image` BLOB)",
+        "tableName": "ImagePath",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `imguri` TEXT)",
         "fields": [
           {
-            "fieldPath": "uid",
-            "columnName": "uid",
+            "fieldPath": "id",
+            "columnName": "id",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "photo",
-            "columnName": "photo",
+            "fieldPath": "imguri",
+            "columnName": "imguri",
             "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "image",
-            "columnName": "image",
-            "affinity": "BLOB",
             "notNull": false
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "uid"
+            "id"
           ],
           "autoGenerate": true
         },
@@ -122,7 +116,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ba2b9c328487e8965205f0c33db70d01')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c2984fe8dad3f45c9796d6383630887b')"
     ]
   }
 }

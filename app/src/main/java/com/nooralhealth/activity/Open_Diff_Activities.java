@@ -22,11 +22,12 @@ public class Open_Diff_Activities extends AppCompatActivity {
         cam = findViewById(R.id.button);
         attnd = findViewById(R.id.button2);
         list = findViewById(R.id.button3);
+        vid = findViewById(R.id.button4);
 
       cam.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(Open_Diff_Activities.this, ImgToRoom.class);
+        Intent i = new Intent(Open_Diff_Activities.this, OpenCamera.class);
         startActivity(i);
           }
       });
@@ -46,5 +47,13 @@ public class Open_Diff_Activities extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+    /*    vid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Open_Diff_Activities.this, VideoCapture.class);
+                startActivity(i);
+            }
+        });*/
     }
 }
