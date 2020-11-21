@@ -48,12 +48,12 @@ public class Open_Diff_Activities extends AppCompatActivity {
             }
         });
 
-    /*    vid.setOnClickListener(new View.OnClickListener() {
+        vid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Open_Diff_Activities.this, VideoCapture.class);
+                Intent i = new Intent(Open_Diff_Activities.this, VideoRecord.class);
                 startActivity(i);
             }
-        });*/
+        });
     }
 }

@@ -125,6 +125,7 @@ public class OpenCamera extends BaseActivity {
 
         });
 
+
         //bind to lifecycle:
         CameraX.bindToLifecycle((LifecycleOwner)this, preview, imgCap);
     }

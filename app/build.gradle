@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -51,7 +52,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
+    // request permission
+    implementation 'com.karumi:dexter:4.2.0'
+    // ButterKnife Dependency Injection
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
+    //Video Parser
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.22'
 
     def cameraxVersion = "1.0.0-alpha02"
     implementation "androidx.camera:camera-core:${cameraxVersion}"

@@ -9,6 +9,17 @@
     <string name="session"><font size="15">Enter session details</font></string>
     <string name="notes"><font size="15">Notes</font></string>
 
+
+    <string name="permission_request">This app needs permission for camera and audio recording.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="message_need_permission">Need Permissions</string>
+    <string name="message_permission">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="title_go_to_setting">GOTO SETTINGS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="play_stop">Play or Stop</string>
+
     <string name="alert_dialog_title">Select Image Option</string>
 
     <string-array name="image_options">
