@@ -17,6 +17,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,12 +47,14 @@ public class OpenCamera extends BaseActivity {
     private int REQUEST_CODE_PERMISSIONS = 101;
     private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE"};
     TextureView textureView;
+    ImageView storeimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_camera);
 
+        storeimg = findViewById(R.id.imgCapture);
         textureView = findViewById(R.id.view_finder);
 
         if(allPermissionsGranted()){
@@ -102,13 +105,13 @@ public class OpenCamera extends BaseActivity {
                 imgCap.takePicture(file, new ImageCapture.OnImageSavedListener() {
                     @Override
                     public void onImageSaved(@NonNull File file) {
+
                         String msg = "Pic captured at " + file.getAbsolutePath();
                         String imagePath = file.getPath();
                        // Bitmap myBitmap = BitmapFactory.decodeFile(ImagePath)
                         Log.e("path",imagePath);
 
                         imgViewModel.addImagePathItem(new ImagePath(imagePath));
-
                         Toast.makeText(getBaseContext(), msg,Toast.LENGTH_LONG).show();
                     }
                     @Override

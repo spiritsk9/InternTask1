@@ -43,7 +43,7 @@ public class VideoRecord extends Activity implements View.OnClickListener, Surfa
     }
 
     private void initRecorder() {
-        recorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
+         recorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
         recorder.setVideoSource(MediaRecorder.VideoSource.DEFAULT);
 
         CamcorderProfile cpLow = CamcorderProfile

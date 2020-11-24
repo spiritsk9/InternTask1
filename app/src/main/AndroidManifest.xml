@@ -27,8 +27,10 @@
         <activity android:name=".activity.OpenCamera" />
         <activity android:name=".activity.Open_Diff_Activities" />
         <activity android:name=".activity.ListDemo" />
+        <activity android:name=".activity.FCMdemo"/>
         <activity android:name=".activity.Add_Attendance" />
         <activity android:name=".activity.splash.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,6 +38,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.AttendanceActivity" />
+
+        <service android:name=".fcm.model.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".fcm.model.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

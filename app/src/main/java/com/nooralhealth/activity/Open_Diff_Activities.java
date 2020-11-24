@@ -11,7 +11,7 @@ import com.nooralhealth.R;
 
 public class Open_Diff_Activities extends AppCompatActivity {
 
-    Button cam, vid, list, attnd;
+    Button cam, vid, list, attnd,fcm;
 
 
     @Override
@@ -23,6 +23,7 @@ public class Open_Diff_Activities extends AppCompatActivity {
         attnd = findViewById(R.id.button2);
         list = findViewById(R.id.button3);
         vid = findViewById(R.id.button4);
+        fcm = findViewById(R.id.FCM);
 
       cam.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -52,6 +53,14 @@ public class Open_Diff_Activities extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Open_Diff_Activities.this, VideoRecord.class);
+                startActivity(i);
+            }
+        });
+
+        fcm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Open_Diff_Activities.this, FCMdemo.class);
                 startActivity(i);
             }
         });

@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "181348721355",
+    "firebase_url": "https://noorahealth-47120.firebaseio.com",
+    "project_id": "noorahealth-47120",
+    "storage_bucket": "noorahealth-47120.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181348721355:android:1fd4c0bb30633490a4b14e",
+        "android_client_info": {
+          "package_name": "com.nooralhealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181348721355-nkdq8pk5j66bdtv9abf31qrlrs24o565.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nooralhealth",
+            "certificate_hash": "171d1c545f79f2c4f796ced0a985cec6479d7c94"
+          }
+        },
+        {
+          "client_id": "181348721355-h0tks9ackrt0tv5o2fm0c5ddsmtc76o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWof8XE-oSgf9t0gHi8X9NjCLZwJtJVd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181348721355-h0tks9ackrt0tv5o2fm0c5ddsmtc76o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181348721355:android:7dcc01cee25677aaa4b14e",
+        "android_client_info": {
+          "package_name": "com.sample.notify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181348721355-rgj4cpvlobn8spn3ed9tg6occu6vbvjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sample.notify",
+            "certificate_hash": "171d1c545f79f2c4f796ced0a985cec6479d7c94"
+          }
+        },
+        {
+          "client_id": "181348721355-h0tks9ackrt0tv5o2fm0c5ddsmtc76o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWof8XE-oSgf9t0gHi8X9NjCLZwJtJVd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181348721355-h0tks9ackrt0tv5o2fm0c5ddsmtc76o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
