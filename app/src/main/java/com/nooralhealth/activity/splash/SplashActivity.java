@@ -6,10 +6,12 @@ import android.os.Handler;
 
 import androidx.lifecycle.LiveData;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.nooralhealth.R;
 import com.nooralhealth.activity.AttendanceActivity;
 import com.nooralhealth.activity.Open_Diff_Activities;
 import com.nooralhealth.activity.base.BaseActivity;
+import com.nooralhealth.activity.login.Login;
 import com.nooralhealth.model.room.model.ClassTypeItem;
 import com.nooralhealth.utill.MyLg;
 import com.nooralhealth.view.adapter.Adapter_ClassItem;
@@ -23,11 +25,15 @@ public class SplashActivity extends BaseActivity {
 
     boolean dataCheck = false;
     boolean splashDone = false;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
         new Handler().postDelayed(() -> {
             splashDone = true;
@@ -39,7 +45,7 @@ public class SplashActivity extends BaseActivity {
 
     private void openActivity() {
         if (splashDone && dataCheck) {
-            Intent i = new Intent(SplashActivity.this, Open_Diff_Activities.class);
+            Intent i = new Intent(SplashActivity.this, Login.class);
             startActivity(i);
             finish();
         }
